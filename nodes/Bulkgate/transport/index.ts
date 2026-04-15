@@ -1,5 +1,4 @@
 import {
-	GenericValue,
 	IDataObject,
 	IHttpRequestMethods,
 	IHttpRequestOptions,
@@ -8,6 +7,7 @@ import {
 	ILoadOptionsFunctions,
 } from 'n8n-workflow';
 
+
 /**
  * Make an API request to BulkGate
  */
@@ -15,22 +15,29 @@ export async function apiRequest(
 		this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions,
 		method: IHttpRequestMethods,
 		endpoint: string,
-		body: IDataObject | GenericValue | GenericValue[] = {},
-	//	query: IDataObject = {},
+		body: IDataObject = {},
 ) {
 
+		if (typeof body === 'object' && body !== null) {
+			const credentials = (await this.getCredentials('bulkGateApi')) as IDataObject;
+			body.application_id = credentials.application_id;
+			body.application_token = credentials.application_token;
+		}
 
+		//throw new Error(`Parse: ${JSON.stringify(body)}`);
 
 		const options: IHttpRequestOptions = {
-			method,
-			body,
+			method: method,
+			body: {
+				...body,
+			},
 			url: `https://portal.bulkgate.com${endpoint}`,
 			headers: {
 				'content-type': 'application/json; charset=utf-8',
 			},
 		};
 
-		return this.helpers.httpRequestWithAuthentication.call(this, 'bulkgateNodeApi', options);
+		return this.helpers.httpRequestWithAuthentication.call(this, 'bulkGateApi', options);
 }
 
 export async function apiRequestAllItems(

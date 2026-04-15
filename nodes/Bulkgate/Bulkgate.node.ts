@@ -1,23 +1,34 @@
-import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { userDescription } from './resources/user';
-import { companyDescription } from './resources/company';
+import {
+	NodeConnectionTypes,
+	type INodeType,
+	type INodeTypeDescription,
+	IExecuteFunctions,
+	INodeExecutionData,
+	ApplicationError,
+} from 'n8n-workflow';
 
-export class Bulkgate implements INodeType {
+import * as addressBook from './resources/addressBook';
+import * as advanced from './resources/advanced';
+import * as blackList from './resources/blackList';
+import * as shortener from './resources/shortener';
+import * as oneTimePassword from './resources/oneTimePassword';
+
+export class BulkGate implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Bulkgate',
+		displayName: 'BulkGate',
 		name: 'bulkgate',
 		icon: { light: 'file:bulkgate.svg', dark: 'file:bulkgate.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with the Bulkgate API',
+		description: 'Interact with the BulkGate API',
 		defaults: {
-			name: 'Bulkgate',
+			name: 'BulkGate',
 		},
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
-		//credentials: [{ name: 'bulkgateApi', required: true }],
+		credentials: [{ name: 'bulkGateApi', required: true }],
 		requestDefaults: {
 			baseURL: 'https://portal.bulkgate.com/api',
 			headers: {
@@ -33,18 +44,62 @@ export class Bulkgate implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'User',
-						value: 'user',
+						name: 'Address Book',
+						value: 'addressBook',
 					},
 					{
-						name: 'Company',
-						value: 'company',
+						name: 'Advanced',
+						value: 'advanced',
+					},
+					{
+						name: 'BlackList',
+						value: 'blackList',
+					},
+					{
+						name: 'One Time Password',
+						value: 'oneTimePassword',
+					},
+					{
+						name: 'Shortener',
+						value: 'shortener',
 					},
 				],
-				default: 'user',
+				default: 'addressBook',
 			},
-			...userDescription,
-			...companyDescription,
+			...addressBook.description,
+			...advanced.descriptions,
+			...blackList.descriptions,
+			...oneTimePassword.description,
+			...shortener.descriptions,
 		],
 	};
+
+	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+		const items = this.getInputData();
+		const returnData: INodeExecutionData[] = [];
+
+		for (let i = 0; i < items.length; i++) {
+			const resource = this.getNodeParameter('resource', i) as string;
+
+			let result: INodeExecutionData[];
+
+			if (resource === 'addressBook') {
+				result = await addressBook.execute.call(this, i);
+			} else if (resource === 'advanced') {
+				result = await advanced.execute.call(this, i);
+			} else if (resource === 'blacklist') {
+				result = await blackList.execute.call(this, i);
+			} else if (resource === 'shortener') {
+				result = await shortener.execute.call(this, i);
+			} else if (resource === 'oneTimePassword') {
+				result = await shortener.execute.call(this, i);
+			} else {
+				throw new ApplicationError(`Unsupported resource: ${resource}`);
+			}
+
+			returnData.push(...result);
+		}
+
+		return [returnData];
+	}
 }

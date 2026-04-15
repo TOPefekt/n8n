@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="aquamarine"
-    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu">
-    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-    <rect x="9" y="9" width="6" height="6"></rect>
-    <line x1="9" y1="1" x2="9" y2="4"></line>
-    <line x1="15" y1="1" x2="15" y2="4"></line>
-    <line x1="9" y1="20" x2="9" y2="23"></line>
-    <line x1="15" y1="20" x2="15" y2="23"></line>
-    <line x1="20" y1="9" x2="23" y2="9"></line>
-    <line x1="20" y1="14" x2="23" y2="14"></line>
-    <line x1="1" y1="9" x2="4" y2="9"></line>
-    <line x1="1" y1="14" x2="4" y2="14"></line>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.73 141.73"><path d="M70.76.26a70.87,70.87,0,1,0,70.86,70.86A70.86,70.86,0,0,0,70.76.26ZM94.71,91.82C91.24,67.5,82.81,56.9,70.76,48.65a50.49,50.49,0,0,0-14,13.61c-.47.79-4.56,8.13,3.91,11.31,9,3.36,24.16-4.73,24.16-4.73-15.14,23.84-38.06,23-38.06,23H33.88c1.35-24.25,15.84-45.15,36.88-56.69,21,11.54,35.61,32.44,36.88,56.69Z" transform="translate(0.11 -0.26)"/></svg>

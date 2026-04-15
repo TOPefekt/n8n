@@ -3,13 +3,15 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
+	IAuthenticateGeneric,
 } from 'n8n-workflow';
 
 export class BulkGateApi implements ICredentialType {
-	name = 'bulkgateNodeApi';
+	name = 'bulkGateApi';
 	displayName = 'BulkGate Node API';
 	icon: Icon = { light: 'file:../icons/bulkgate.svg', dark: 'file:../icons/bulkgate_dark.svg' };
 	documentationUrl = 'https://help.bulkgate.com/';
+
 	properties: INodeProperties[] = [
 		{
 			displayName: 'Application id',
@@ -25,10 +27,20 @@ export class BulkGateApi implements ICredentialType {
 			typeOptions: { password: true },
 		},
 	];
+	authenticate: IAuthenticateGeneric = {
+		type: 'generic',
+		properties: {
+			body: {
+				application_id: '={{$credentials.application_id}}',
+				application_token: '={{$credentials.application_token}}',
+			},
+		},
+	};
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: 'https://portal.bulkgate.com',
 			url: '/api/2.0/advanced/info',
+			method: 'POST',
 		},
 	};
 }
