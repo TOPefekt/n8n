@@ -21,7 +21,8 @@ export const advancedTransactionalViberDescription: AdvancedProperties = [
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Text of SMS message (max. 612 characters, or 268 characters if Unicode is used), UTF-8 encoding. It is possible to add variables to the template from the variables array (another parameter) Hello &lt;first_name&gt; &lt;last_name&gt; ....',
+		description:
+			'Text of SMS message (max. 612 characters, or 268 characters if Unicode is used), UTF-8 encoding. It is possible to add variables to the template from the variables array (another parameter) Hello &lt;first_name&gt; &lt;last_name&gt; ....',
 		displayOptions: {
 			show: {
 				operation: ['transactionalViber'],
@@ -289,7 +290,7 @@ export const advancedTransactionalViberDescription: AdvancedProperties = [
 				value: 'CR',
 			},
 			{
-				name: 'Cote D\'Ivoire',
+				name: "Cote D'Ivoire",
 				value: 'CI',
 			},
 			{
@@ -1058,20 +1059,58 @@ export const advancedTransactionalViberDescription: AdvancedProperties = [
 			},
 		],
 		default: 'CZ',
-		description: 'Provide the recipients\' numbers in an international format (with prefix, e.g. 44) or add the country code in ISO 3166-1 alpha-2 format (7820125799 + GB = 447820125799). See the country example request. If null, your set timezone will be used to fill the information',
+		description:
+			"Provide the recipients' numbers in an international format (with prefix, e.g. 44) or add the country code in ISO 3166-1 alpha-2 format (7820125799 + GB = 447820125799). See the country example request. If null, your set timezone will be used to fill the information",
 	},
 	{
 		displayName: 'Sender',
 		name: 'sender',
 		type: 'string',
 		default: '',
-		description: 'Sender value - gOwn (e.g. "420 777 777 777"), gText (e.g. "BulkGate"), gProfile (e.g. "423"), gMobile or gPush (KEY)',
+		description:
+			'Sender value - gOwn (e.g. "420 777 777 777"), gText (e.g. "BulkGate"), gProfile (e.g. "423"), gMobile or gPush (KEY)',
 		displayOptions: {
 			show: {
 				operation: ['transactionalViber'],
 				resource: ['advanced'],
 			},
 		},
+	},
+	{
+		displayName: 'Expiration',
+		name: 'expiration',
+		type: 'number',
+		default: 120,
+		description: 'Time limit after which alternative channel will be used',
+		displayOptions: {
+			show: {
+				operation: ['transactionalViber'],
+				resource: ['advanced'],
+			},
+		},
+	},
+	{
+		displayName: 'Use Template',
+		name: 'use_template',
+		type: 'options',
+		displayOptions: {
+			show: {
+				operation: ['transactionalViber'],
+				resource: ['advanced'],
+			},
+		},
+		options: [
+			{
+				name: 'Yes',
+				value: true,
+			},
+			{
+				name: 'No',
+				value: false,
+			},
+		],
+		default: false,
+		description: 'Parameter used in Belarus, Ukraine and Russia. In order to send SMS for price of Transactional SMS a preaproved template must be used, otherwise SMS will be send for price of Promotional SMS.',
 	},
 	{
 		displayName: 'Schedule',
@@ -1107,6 +1146,7 @@ export const advancedTransactionalViberDescription: AdvancedProperties = [
 			},
 		],
 		default: 'off',
-		description: 'Select on to prevent sending duplicate messages to the same phone number. Messages with the same text sent to the same number will be removed if there is a time interval shorter than 5 minutes. If off no duplicates will be removed.',
+		description:
+			'Select on to prevent sending duplicate messages to the same phone number. Messages with the same text sent to the same number will be removed if there is a time interval shorter than 5 minutes. If off no duplicates will be removed.',
 	},
 ];

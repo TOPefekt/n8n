@@ -9,7 +9,7 @@ export async function promotionalViber(
 	const body = {} as IDataObject;
 
 	const requestMethod = 'POST';
-	const endpoint = '/api/1.0/integration/promotional';
+	const endpoint = '/api/2.0/advanced/promotional';
 
 	const numberList = this.getNodeParameter('number', index) as {numbers: []};
 	const newNumberList: {[k: number]: string} = [];

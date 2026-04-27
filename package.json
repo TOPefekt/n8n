@@ -19,8 +19,7 @@
 		"postinstall": "rm -rf node_modules/zod",
 		"build": "n8n-node build",
 		"build:watch": "tsc --watch",
-		"predev": "node scripts/fix-n8n-zod.mjs",
-		"dev": "n8n-node dev",
+		"dev": "node scripts/dev.mjs",
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
 		"release": "n8n-node release",
@@ -36,7 +35,9 @@
 			"dist/credentials/BulkGateApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/Bulkgate/Bulkgate.node.js"
+			"dist/nodes/Bulkgate/Bulkgate.node.js",
+			"dist/nodes/BulkgateTriggers/BulkgateDeliveryReports.node.js",
+			"dist/nodes/BulkgateTriggers/BulkgateBulkDeliveryReports.node.js"
 		]
 	},
 	"devDependencies": {
@@ -44,7 +45,8 @@
 		"eslint": "9.39.4",
 		"prettier": "3.8.1",
 		"release-it": "^17.11.0",
-		"typescript": "5.9.3"
+		"typescript": "5.9.3",
+		"zod": "^4.3.6"
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"

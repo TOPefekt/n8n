@@ -94,7 +94,7 @@ export async function execute(this: IExecuteFunctions, index: number): Promise<I
 
 		if (!handler)
 		{
-			throw new Error(`Unsupported contact operation: ${operation}`);
+			throw new Error(`Unsupported one time password operation: ${operation}`);
 		}
 
 		return await handler.call(this, index);

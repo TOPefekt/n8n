@@ -12,8 +12,9 @@ import * as advanced from './resources/advanced';
 import * as blackList from './resources/blackList';
 import * as shortener from './resources/shortener';
 import * as oneTimePassword from './resources/oneTimePassword';
+import * as other from './resources/other';
 
-export class BulkGate implements INodeType {
+export class Bulkgate implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'BulkGate',
 		name: 'bulkgate',
@@ -60,6 +61,10 @@ export class BulkGate implements INodeType {
 						value: 'oneTimePassword',
 					},
 					{
+						name: 'Other',
+						value: 'other',
+					},
+					{
 						name: 'Shortener',
 						value: 'shortener',
 					},
@@ -71,6 +76,7 @@ export class BulkGate implements INodeType {
 			...blackList.descriptions,
 			...oneTimePassword.description,
 			...shortener.descriptions,
+			...other.descriptions,
 		],
 	};
 
@@ -87,12 +93,14 @@ export class BulkGate implements INodeType {
 				result = await addressBook.execute.call(this, i);
 			} else if (resource === 'advanced') {
 				result = await advanced.execute.call(this, i);
-			} else if (resource === 'blacklist') {
+			} else if (resource === 'blackList') {
 				result = await blackList.execute.call(this, i);
 			} else if (resource === 'shortener') {
 				result = await shortener.execute.call(this, i);
 			} else if (resource === 'oneTimePassword') {
-				result = await shortener.execute.call(this, i);
+				result = await oneTimePassword.execute.call(this, i);
+			} else if (resource === 'other') {
+				result = await other.execute.call(this, i);
 			} else {
 				throw new ApplicationError(`Unsupported resource: ${resource}`);
 			}

@@ -1102,4 +1102,17 @@ export const advancedPromotionalViberDifferentTextDescription: AdvancedPropertie
 			},
 		],
 	},
+	{
+		displayName: 'Tag',
+		name: 'tag',
+		type: 'string',
+		default: '',
+		description: 'Message label for subsequent retrieval of the user',
+		displayOptions: {
+			show: {
+				operation: ['promotionalViberDifferentText'],
+				resource: ['advanced'],
+			},
+		},
+	},
 ];

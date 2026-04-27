@@ -57,6 +57,29 @@ export const smsObject: OneTimePasswordProperties = [
 		},
 	},
 	{
+		displayName: 'Unicode',
+		name: 'unicode',
+		type: 'options',
+		displayOptions: {
+			show: {
+				operation: ['sendSms'],
+				resource: ['oneTimePassword'],
+			},
+		},
+		options: [
+			{
+				name: 'Yes',
+				value: 'yes',
+			},
+			{
+				name: 'No',
+				value: 'no',
+			},
+		],
+		default: 'no',
+		description: 'Yes for Unicode SMS, no for 7bit SMS',
+	},
+	{
 		displayName: 'Domain',
 		name: 'domain',
 		type: 'string',

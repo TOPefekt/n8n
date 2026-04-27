@@ -86,7 +86,7 @@ export async function execute(
 	const handler = operationHandlers[operation];
 
 	if (!handler) {
-		throw new Error(`Unsupported contact operation: ${operation}`);
+		throw new Error(`Unsupported advanced API operation: ${operation}`);
 	}
 
 	return await handler.call(this, index);

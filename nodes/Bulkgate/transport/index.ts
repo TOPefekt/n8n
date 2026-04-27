@@ -22,9 +22,8 @@ export async function apiRequest(
 			const credentials = (await this.getCredentials('bulkGateApi')) as IDataObject;
 			body.application_id = credentials.application_id;
 			body.application_token = credentials.application_token;
+			body.application_product = "n8n";
 		}
-
-		//throw new Error(`Parse: ${JSON.stringify(body)}`);
 
 		const options: IHttpRequestOptions = {
 			method: method,

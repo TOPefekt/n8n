@@ -1107,8 +1107,8 @@ export const advancedPromotionalSMSDifferentTextDescription: AdvancedProperties 
 						},
 						options: [
 							{
-								name: 'variable_values',
-								displayName: 'Variable Values',
+								name: 'variable',
+								displayName: 'Variable',
 								values: [
 									{
 										displayName: 'Variable Name',
@@ -1136,5 +1136,11 @@ export const advancedPromotionalSMSDifferentTextDescription: AdvancedProperties 
 		type: 'string',
 		default: '',
 		description: 'Message label for subsequent retrieval of the user',
+		displayOptions: {
+			show: {
+				operation: ['promotionalSMSDifferentText'],
+				resource: ['advanced'],
+			},
+		},
 	},
 ];

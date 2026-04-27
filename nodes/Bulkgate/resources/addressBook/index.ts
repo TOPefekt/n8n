@@ -1,9 +1,9 @@
 import type { INodeProperties, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import * as addContact from '../../resources/addressBook/addContact';
-import * as editContact from '../../resources/addressBook/editContact';
-import * as removeContact from '../../resources/addressBook/removeContact';
-import * as getContact from '../../resources/addressBook/getContact';
-import * as importContact from '../../resources/addressBook/importContact'
+import * as addContact from '../../resources/addressBook/add';
+import * as editContact from '../../resources/addressBook/edit';
+import * as removeContact from '../../resources/addressBook/remove';
+import * as getContact from '../../resources/addressBook/get';
+import * as importContact from '../../resources/addressBook/import'
 
 
 export { addContact, editContact, removeContact, getContact, importContact };
@@ -87,11 +87,11 @@ export const description: INodeProperties[] = [
 ];
 
 const operationHandlers = {
-	create: addContact.execute,
-	update: editContact.execute,
+	addContact: addContact.execute,
+	editContact: editContact.execute,
 	removeContact: removeContact.execute,
-	get: getContact.execute,
-	import: importContact.execute,
+	getContact: getContact.execute,
+	importContact: importContact.execute,
 } as const;
 
 
@@ -99,11 +99,13 @@ export async function execute(this: IExecuteFunctions, index: number): Promise<I
 {
 		const operation = this.getNodeParameter('operation', index) as keyof typeof operationHandlers;
 
+		//throw new Error(`Unsupported contact operation: ${JSON.stringify(operationHandlers)}`);
+
 		const handler = operationHandlers[operation];
 
 		if (!handler)
 		{
-			throw new Error(`Unsupported contact operation: ${operation}`);
+			throw new Error(`Unsupported address book operation: ${operation}`);
 		}
 
 		return await handler.call(this, index);

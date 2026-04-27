@@ -1243,7 +1243,7 @@ export const oneTimePasswordSendViberDescription: OneTimePasswordProperties = [
 	},
 	{
 		displayName: 'OTP Expiration',
-		name: 'expiration',
+		name: 'opt_expiration',
 		type: 'number',
 		default: 604800,
 		displayOptions: {

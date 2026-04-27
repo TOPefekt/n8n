@@ -1243,7 +1243,7 @@ export const oneTimePasswordSendSmsDescription: OneTimePasswordProperties = [
 	},
 	{
 		displayName: 'OTP Expiration',
-		name: 'expiration',
+		name: 'otp_expiration',
 		type: 'number',
 		default: 604800,
 		displayOptions: {

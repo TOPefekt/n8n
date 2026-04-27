@@ -16,7 +16,7 @@ export const viberObject: OneTimePasswordProperties = [
 	},
 	{
 		displayName: 'Viber Expiration',
-		name: 'expiration',
+		name: 'viber_expiration',
 		type: 'number',
 		default: 60,
 		displayOptions: {

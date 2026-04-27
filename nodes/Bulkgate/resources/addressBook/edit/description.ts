@@ -6,6 +6,7 @@ export const addressBookEditContactDescription: AddressBookProperties = [
 		name: 'phone_number',
 		type: 'string',
 		default: '',
+		required: true,
 		description: 'Phone number of contact to be edited',
 		displayOptions: {
 			show: {
@@ -43,7 +44,6 @@ export const addressBookEditContactDescription: AddressBookProperties = [
 		name: 'phone_mobile',
 		type: 'string',
 		default: '',
-		required: true,
 		description: 'Main phone number',
 		displayOptions: {
 			show: {
@@ -161,19 +161,6 @@ export const addressBookEditContactDescription: AddressBookProperties = [
 		type: 'string',
 		placeholder: 'name@email.com',
 		default: '',
-		displayOptions: {
-			show: {
-				operation: ['editContact'],
-				resource: ['addressBook'],
-			},
-		},
-	},
-	{
-		displayName: 'Url',
-		name: 'uel',
-		type: 'string',
-		default: '',
-		description: 'URL of your website',
 		displayOptions: {
 			show: {
 				operation: ['editContact'],
@@ -480,7 +467,7 @@ export const addressBookEditContactDescription: AddressBookProperties = [
 				value: 'CR',
 			},
 			{
-				name: 'Cote D\'Ivoire',
+				name: "Cote D'Ivoire",
 				value: 'CI',
 			},
 			{
@@ -1249,7 +1236,8 @@ export const addressBookEditContactDescription: AddressBookProperties = [
 			},
 		],
 		default: 'CZ',
-		description: 'Provide the recipients\' numbers in an international format (with prefix, e.g. 44) or add the country code in ISO 3166-1 alpha-2 format (7820125799 + GB = 447820125799). See the country example request. If null, your set timezone will be used to fill the information',
+		description:
+			"Provide the recipients' numbers in an international format (with prefix, e.g. 44) or add the country code in ISO 3166-1 alpha-2 format (7820125799 + GB = 447820125799). See the country example request. If null, your set timezone will be used to fill the information",
 	},
 	{
 		displayName: 'Company Number',

@@ -30,7 +30,7 @@ export const addressBookImportContactDescription: AddressBookProperties = [
 					{
 						displayName: 'Group ID',
 						name: 'group_id',
-						type: 'string',
+						type: 'number',
 						default: '',
 					},
 				],
@@ -68,8 +68,8 @@ export const addressBookImportContactDescription: AddressBookProperties = [
 		},
 		options: [
 			{
-				name: 'contact',
-				displayName: 'Contact',
+				name: 'contacts',
+				displayName: 'Contacts',
 				values: [
 					{
 						displayName: 'City',

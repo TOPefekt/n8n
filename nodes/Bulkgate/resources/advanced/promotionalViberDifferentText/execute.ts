@@ -53,13 +53,13 @@ export async function promotionalViberDifferentText(
 		image: string;
 		image_zoom: boolean;
 		text: string;
-		//variables: VariablesUiValue;
+		variables: VariablesUiValue;
 	}
 
 	interface inputPayload {
 		messages: inputPayloadItem[];
 	}
-/*
+
 	interface VariableUiRow {
 		name: string;
 		value: string;
@@ -76,7 +76,7 @@ export async function promotionalViberDifferentText(
 		return Object.fromEntries(
 			rows.filter((row) => row.name?.trim() !== '').map((row) => [row.name, row.value]),
 		);
-	}*/
+	}
 
 
 	const messageList = this.getNodeParameter('messages', index) as inputPayload;
@@ -84,9 +84,9 @@ export async function promotionalViberDifferentText(
 	body.tag = this.getNodeParameter('tag', index) as string;
 
 	if (messageList.messages.length > 0) {
-		messageList.messages.forEach((value: inputPayloadItem) => {
+			messageList.messages.forEach((value: inputPayloadItem) => {
 
-			//const viber_variables = mapVariablesUiToObject(value.variables);
+			const viber_variables = mapVariablesUiToObject(value.variables);
 
 			const channel = {
 				viber: {
@@ -97,7 +97,7 @@ export async function promotionalViberDifferentText(
 					button_url: value.button_url,
 					image: value.image,
 					image_zoom: value.image_zoom,
-				//	variables: viber_variables,
+					variables: viber_variables,
 				},
 			} as MessageChannels;
 

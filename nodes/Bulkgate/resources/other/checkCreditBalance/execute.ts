@@ -2,19 +2,13 @@ import { IDataObject, INodeExecutionData, IExecuteFunctions } from 'n8n-workflow
 
 import { apiRequest } from '../../../transport';
 
-export async function shorten(
+export async function check(
 	this: IExecuteFunctions,
-	index: number,
 ): Promise<INodeExecutionData[]> {
 	const body = {} as IDataObject;
-
 	const requestMethod = 'POST';
-	const endpoint = '/api/1.0/shortener/shorten';
+	const endpoint = '/api/2.0/advanced/info';
 
-	body.target_url = this.getNodeParameter('target_url', index) as string;
-	body.url_type = this.getNodeParameter('url_type', index) as string;
-
-	//throw new Error(`Parse: ${JSON.stringify(body)}`);
 
 	const responseData = await apiRequest.call(this, requestMethod, endpoint, body);
 
