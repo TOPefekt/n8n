@@ -30,18 +30,18 @@ jobs:
 
       - name: Configure npm authentication
         run: |
-            if [ -z "$N8N_TOKEN" ]; then
-              echo "::error::N8N_TOKEN secret is missing or empty"
+            if [ -z "$NPM_TOKEN" ]; then
+              echo "::error::NPM_TOKEN secret is missing or empty"
               exit 1
             fi
             
-            echo "//registry.npmjs.org/:_authToken=${N8N_TOKEN}" > ~/.npmrc
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
             npm whoami
         env:
-            NPM_TOKEN: ${{ secrets.N8N_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Release
         run: npm run release
         env:
-          NPM_TOKEN: ${{ secrets.N8N_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.N8N_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
