@@ -13,7 +13,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:TOPefekt/n8n.git"
+		"url": "git+ssh://git@github.com/TOPefekt/n8n.git"
 	},
 	"scripts": {
 		"postinstall": "rm -rf node_modules/zod",
