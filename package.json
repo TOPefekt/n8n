@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-bulkgate",
-	"version": "0.1.3",
+	"version": "0.1.5",
 	"description": "BulkGate integration for n8n",
 	"license": "MIT",
 	"homepage": "",
@@ -36,8 +36,8 @@
 		],
 		"nodes": [
 			"dist/nodes/Bulkgate/Bulkgate.node.js",
-			"dist/nodes/BulkgateTriggers/BulkgateDeliveryReports.node.js",
-			"dist/nodes/BulkgateTriggers/BulkgateBulkDeliveryReports.node.js"
+			"dist/nodes/BulkGateDeliveryReport/BulkGateDeliveryReport.node.js",
+			"dist/nodes/BulkGateBulkDeliveryReport/BulkGateBulkDeliveryReport.node.js"
 		]
 	},
 	"devDependencies": {
