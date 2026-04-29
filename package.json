@@ -19,9 +19,9 @@
 		"url": "git+ssh://git@github.com/TOPefekt/n8n.git"
 	},
 	"bugs": {
-		"url": "https://github.com/marekpijak/n8n-nodes-bulkgate/issues"
+		"url": "https://github.com/TOPefekt/n8n/issues"
 	},
-	"homepage": "https://github.com/marekpijak/n8n-nodes-bulkgate#readme",
+	"homepage": "https://github.com/TOPefekt/n8n/blob/main/README.md",
 	"scripts": {
 		"postinstall": "rm -rf node_modules/zod",
 		"build": "n8n-node build",
