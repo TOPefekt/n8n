@@ -1,9 +1,12 @@
 {
 	"name": "n8n-nodes-bulkgate",
-	"version": "0.1.5",
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
+	"version": "0.1.6",
 	"description": "BulkGate integration for n8n",
 	"license": "MIT",
-	"homepage": "",
 	"keywords": [
 		"n8n-community-node-package"
 	],
@@ -15,6 +18,10 @@
 		"type": "git",
 		"url": "git+ssh://git@github.com/TOPefekt/n8n.git"
 	},
+	"bugs": {
+		"url": "https://github.com/marekpijak/n8n-nodes-bulkgate/issues"
+	},
+	"homepage": "https://github.com/marekpijak/n8n-nodes-bulkgate#readme",
 	"scripts": {
 		"postinstall": "rm -rf node_modules/zod",
 		"build": "n8n-node build",
