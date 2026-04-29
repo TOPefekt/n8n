@@ -1,19 +1,18 @@
 # n8n-nodes-bulkgate
 
-This is an n8n community node. It lets you use BulkGate in your n8n workflows.
+This is a n8n community node. It lets you use BulkGate in your n8n workflows.
 
 BulkGate is the multichannel messaging platform for successful business communication
 Connect with your customers anywhere in the world with BulkGate. Engage and interact with them via SMS gateway, Viber, and other solutions.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 
-[Installation](#installation)
-[Operations](#operations)
-[Credentials](#credentials)
-[Compatibility](#compatibility)
-[Usage](#usage)
-[Resources](#resources)
-[Version history](#version-history)
+- [Installation](#installation)
+- [Operations](#operations)
+- [Credentials](#credentials)
+- [Compatibility](#compatibility)
+- [Usage](#usage) 
+- [Resources](#resources)
 
 ## Installation
 
