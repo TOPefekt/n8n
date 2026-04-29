@@ -4,7 +4,7 @@
 		"access": "public",
 		"provenance": true
 	},
-	"version": "0.1.12",
+	"version": "0.1.13",
 	"description": "BulkGate integration for n8n",
 	"license": "MIT",
 	"keywords": [
