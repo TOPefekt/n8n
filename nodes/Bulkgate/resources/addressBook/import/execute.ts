@@ -63,7 +63,7 @@ export async function importContact(
 		group_id: number;
 	};
 
-	if (groupList.group.length > 0) {
+	if (Array.isArray(groupList.group) && groupList.group.length > 0) {
 		groupList.group.forEach((value: groupType, index) => {
 			newGroupList[index] = value.group_id;
 		});

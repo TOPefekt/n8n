@@ -33,6 +33,7 @@ export const blackListRemoveDescription: BlackListProperties = [
 		name: 'wallet',
 		type: 'string',
 		default: '',
+		required: true,
 		description: 'Wallet from which to remove blacklisted numbers',
 		displayOptions: {
 			show: {
