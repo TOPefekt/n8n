@@ -8,7 +8,7 @@ export const oneTimePasswordSendSmsDescription: OneTimePasswordProperties = [
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'Phone number of contact to be removed',
+		description: 'Phone number to which send the verification code',
 		displayOptions: {
 			show: {
 				operation: ['sendSms'],

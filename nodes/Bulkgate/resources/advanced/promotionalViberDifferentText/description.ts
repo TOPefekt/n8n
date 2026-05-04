@@ -23,14 +23,14 @@ export const advancedPromotionalViberDifferentTextDescription: AdvancedPropertie
 				name: 'messages',
 				values: [
 					{
-						displayName: 'Button_caption',
+						displayName: 'Button Caption',
 						name: 'button_caption',
 						type: 'string',
 						required: true,
 						default: '',
 					},
 					{
-						displayName: 'Button_url',
+						displayName: 'Button URL',
 						name: 'button_url',
 						type: 'string',
 						required: true,

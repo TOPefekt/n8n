@@ -17,12 +17,6 @@ export const addressBookAddContactDescription: AddressBookProperties = [
 				resource: ['addressBook'],
 			},
 		},
-		routing: {
-			send: {
-				type: 'body',
-				property: 'name',
-			},
-		},
 		options: [
 			{
 				name: 'group',
