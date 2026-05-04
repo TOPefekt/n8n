@@ -42,7 +42,7 @@ export async function addContact(
 		city: this.getNodeParameter('city', index) as string,
 		zip: this.getNodeParameter('zip', index) as string,
 		state: this.getNodeParameter('state', index) as string,
-		country: this.getNodeParameter('company_number', index) as string,
+		country: this.getNodeParameter('country', index) as string,
 		company_number: this.getNodeParameter('company_number', index) as string,
 		company_vat: this.getNodeParameter('company_vat', index) as string,
 		note: this.getNodeParameter('note', index) as string,

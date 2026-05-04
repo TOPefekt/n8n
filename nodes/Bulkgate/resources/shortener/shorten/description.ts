@@ -2,7 +2,7 @@ import { ShortenerProperties } from '../../Interfaces';
 
 export const shortenerShortenDescription: ShortenerProperties = [
 	{
-		displayName: 'Target Url',
+		displayName: 'Target URL',
 		name: 'target_url',
 		type: 'string',
 		default: '',
@@ -16,7 +16,7 @@ export const shortenerShortenDescription: ShortenerProperties = [
 		},
 	},
 	{
-		displayName: 'Url Type',
+		displayName: 'URL Type',
 		name: 'url_type',
 		type: 'options',
 		description: 'Domain of URL to be shortened (ur7.fr, u1.pm, ms6.fr, ms6.cz, msg.bg)',

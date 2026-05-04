@@ -11,9 +11,7 @@ export async function editContact(
 	const requestMethod = 'POST';
 	const endpoint = '/api/1.0/address-book/edit';
 
-
 	body.phone_number = this.getNodeParameter('phone_number', index) as string;
-
 
 	body.data = {
 		type: this.getNodeParameter('type', index) ? this.getNodeParameter('type', index) as string : null,
@@ -32,7 +30,7 @@ export async function editContact(
 		city: this.getNodeParameter('city', index) ? this.getNodeParameter('city', index) as string : null,
 		zip: this.getNodeParameter('zip', index) ? this.getNodeParameter('zip', index) as string : null,
 		state: this.getNodeParameter('state', index) ? this.getNodeParameter('state', index) as string : null,
-		country: this.getNodeParameter('company_number', index) ? this.getNodeParameter('company_number', index) as string : null,
+		country: this.getNodeParameter('country', index) ? this.getNodeParameter('country', index) as string : null,
 		company_number: this.getNodeParameter('company_number', index) ? this.getNodeParameter('company_number', index) as string : null,
 		company_vat: this.getNodeParameter('company_vat', index) ? this.getNodeParameter('company_vat', index) as string : null,
 		note: this.getNodeParameter('note', index) ? this.getNodeParameter('note', index) as string : null,

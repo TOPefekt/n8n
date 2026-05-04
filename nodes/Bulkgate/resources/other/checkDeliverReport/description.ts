@@ -7,7 +7,7 @@ export const checkDeliveryReportDescription: OtherProperties = [
 		type: 'string',
 		default: '',
 		required: true,
-		description: 'MESSAGE ID is a unique identifier of particular message. It is generated after sending the message.',
+		description: 'Message ID is a unique identifier of particular message. It is generated after sending the message.',
 		displayOptions: {
 			show: {
 				operation: ['checkDeliveryReport'],

@@ -36,7 +36,7 @@ export async function sendViber(
 	body.trials_available_verification = this.getNodeParameter('trials_available_verification',	index);
 	body.daily_limit = this.getNodeParameter('daily_limit', index);
 	body.daily_limit_country = this.getNodeParameter('daily_limit_country', index);
-	body.expiration = this.getNodeParameter('opt_expiration', index);
+	body.expiration = this.getNodeParameter('otp_expiration', index);
 	body.channel = omitEmpty(channels);
 
 	const cleaned_body = omitEmpty(body);

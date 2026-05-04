@@ -22,52 +22,28 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Send OPT via SMS',
+				name: 'Send OTP via SMS',
 				value: 'sendSms',
 				description: 'Sends one time password via SMS message',
 				action: 'Send OTP via SMS',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/otp/send',
-					},
-				},
 			},
 			{
 				name: 'Send OTP via Viber',
 				value: 'sendViber',
 				description: 'Sends one time password via Viber message',
 				action: 'Send OTP via viber',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/otp/send',
-					},
-				},
 			},
 			{
 				name: 'Verify',
 				value: 'verify',
 				description: 'Verifies the code send by BulkGate',
 				action: 'Verify OTP',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/otp/verify',
-					},
-				},
 			},
 			{
 				name: 'Resend',
 				value: 'resend',
 				description: 'Resends one time password',
 				action: 'Resend OTP',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/otp/resend',
-					},
-				},
 			},
 		],
 		default: 'sendSms',

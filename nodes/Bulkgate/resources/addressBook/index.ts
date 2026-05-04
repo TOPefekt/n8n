@@ -27,12 +27,6 @@ export const description: INodeProperties[] = [
 				value: 'addContact',
 				description: 'Adds contact to BulkGate address book',
 				action: 'Address book add contact',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/address-book/add',
-					},
-				},
 			},
 			{
 				name: 'Edit Contact',
@@ -45,36 +39,18 @@ export const description: INodeProperties[] = [
 				value: 'getContact',
 				description: 'Removes contact to BulkGate address book',
 				action: 'Address book get contact',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/address-book/get',
-					},
-				},
 			},
 			{
 				name: 'Import Contact',
 				value: 'importContact',
 				description: 'Import contacts to BulkGate address book',
 				action: 'Address book import contact',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/address-book/import',
-					},
-				},
 			},
 			{
 				name: 'Remove Contact',
 				value: 'removeContact',
 				description: 'Removes contact to BulkGate address book',
 				action: 'Address book remove contact',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/1.0/address-book/remove',
-					},
-				},
 			},
 		],
 		default: 'addContact',

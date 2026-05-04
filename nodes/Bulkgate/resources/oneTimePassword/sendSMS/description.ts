@@ -1126,7 +1126,7 @@ export const oneTimePasswordSendSmsDescription: OneTimePasswordProperties = [
 		],
 		default: 'cs',
 		description:
-			"Provide the recipients' numbers in an international format (with prefix, e.g. 44) or add the country code in ISO 3166-1 alpha-2 format (7820125799 + GB = 447820125799). See the country example request. If null, your set timezone will be used to fill the information",
+			'Language of send otp message (if null is used language will be detected from phone number)',
 	},
 	{
 		displayName: 'Code Type',

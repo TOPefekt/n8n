@@ -14,13 +14,13 @@ export class BulkGateApi implements ICredentialType {
 
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Application id',
+			displayName: 'Application ID',
 			name: 'application_id',
 			type: 'string',
 			default: '',
 		},
 		{
-			displayName: 'Application token',
+			displayName: 'Application Token',
 			name: 'application_token',
 			type: 'string',
 			default: '',

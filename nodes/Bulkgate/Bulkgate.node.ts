@@ -30,13 +30,13 @@ export class Bulkgate implements INodeType {
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [{ name: 'bulkGateApi', required: true }],
-		requestDefaults: {
+		/*requestDefaults: {
 			baseURL: 'https://portal.bulkgate.com/api',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
 			},
-		},
+		},*/
 		properties: [
 			{
 				displayName: 'Resource',

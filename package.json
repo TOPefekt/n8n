@@ -23,10 +23,9 @@
 	},
 	"homepage": "https://github.com/TOPefekt/n8n/blob/main/README.md",
 	"scripts": {
-		"postinstall": "rm -rf node_modules/zod",
 		"build": "n8n-node build",
 		"build:watch": "tsc --watch",
-		"dev": "node scripts/dev.mjs",
+		"dev": "n8n-node dev",
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
 		"release": "n8n-node release",
@@ -52,8 +51,7 @@
 		"eslint": "9.39.4",
 		"prettier": "3.8.1",
 		"release-it": "^17.11.0",
-		"typescript": "5.9.3",
-		"zod": "^4.3.6"
+		"typescript": "5.9.3"
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"

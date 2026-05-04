@@ -1133,7 +1133,7 @@ export const advancedPromotionalSMSDescription: AdvancedProperties = [
 		},
 	},
 	{
-		displayName: 'Duplicates_check',
+		displayName: 'Duplicates Check',
 		name: 'duplicates_check',
 		type: 'options',
 		displayOptions: {

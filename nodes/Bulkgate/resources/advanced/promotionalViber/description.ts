@@ -86,7 +86,7 @@ export const advancedPromotionalViberDescription: AdvancedProperties = [
 		},
 	},
 	{
-		displayName: 'Button Url',
+		displayName: 'Button URL',
 		name: 'url',
 		type: 'string',
 		default: '',
@@ -1107,7 +1107,7 @@ export const advancedPromotionalViberDescription: AdvancedProperties = [
 		},
 	},
 	{
-		displayName: 'Duplicates_check',
+		displayName: 'Duplicates Check',
 		name: 'duplicates_check',
 		type: 'options',
 		displayOptions: {

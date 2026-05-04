@@ -2,7 +2,7 @@ import { ShortenerProperties } from '../../Interfaces';
 
 export const shortenerRemoveDescription: ShortenerProperties = [
 	{
-		displayName: 'Short',
+		displayName: 'Short URL',
 		name: 'short_url',
 		type: 'string',
 		default: '',

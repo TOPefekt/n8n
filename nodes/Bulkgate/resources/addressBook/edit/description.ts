@@ -169,7 +169,7 @@ export const addressBookEditContactDescription: AddressBookProperties = [
 		},
 	},
 	{
-		displayName: 'Url',
+		displayName: 'URL',
 		name: 'url',
 		type: 'string',
 		default: '',
@@ -1252,7 +1252,7 @@ export const addressBookEditContactDescription: AddressBookProperties = [
 		},
 	},
 	{
-		displayName: 'Company Vat',
+		displayName: 'Company VAT',
 		name: 'company_vat',
 		type: 'string',
 		default: '',

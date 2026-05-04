@@ -91,7 +91,7 @@ export const addressBookImportContactDescription: AddressBookProperties = [
 						default: '',
 					},
 					{
-						displayName: 'Company Vat',
+						displayName: 'Company VAT',
 						name: 'company_vat',
 						type: 'string',
 						default: '',
@@ -1269,7 +1269,7 @@ export const addressBookImportContactDescription: AddressBookProperties = [
 						],
 					},
 					{
-						displayName: 'Url',
+						displayName: 'URL',
 						name: 'url',
 						type: 'string',
 						default: '',

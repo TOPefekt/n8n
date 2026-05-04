@@ -23,24 +23,12 @@ export const descriptions: INodeProperties[] = [
 				value: 'checkCreditBalance',
 				description: 'Checks state of your account balance',
 				action: 'Check credit balance',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/api/2.0/advanced/info',
-					},
-				},
 			},
 			{
 				name: 'Check Delivery Report',
 				value: 'checkDeliveryReport',
 				description: 'Checks delivery report of given message ID',
 				action: 'Check delivery report',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/api/1.0/advanced/delivery/post',
-					},
-				},
 			},
 		],
 		default: 'checkCreditBalance',

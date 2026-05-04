@@ -110,8 +110,6 @@ export async function importContact(
 
 	const cleaned_body = omitEmpty(body);
 
-	//throw new Error(`Parse: ${JSON.stringify(cleaned_body)}`);
-
 	const responseData = await apiRequest.call(this, requestMethod, endpoint, cleaned_body);
 
 	return this.helpers.returnJsonArray(responseData);
